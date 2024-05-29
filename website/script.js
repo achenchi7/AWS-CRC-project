@@ -132,7 +132,8 @@ resumeButton.addEventListener('click', () =>{
 const counter = document.querySelector(".website-counter");
 async function updateCounter() {
     let response = await fetch("https://4mmnzozdsvnbjypoj3qa355p3m0exdwg.lambda-url.us-east-1.on.aws/");
-    let data = await response.json();
-    counter.innerHTML = '👀 Views: ${data}';
+    let views = await response.json();
+    counter.innerHTML = '👀 Views: ${views}';
 }
 updateCounter();
+
